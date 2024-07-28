@@ -1,6 +1,3 @@
-import copy
-
-
 class CliffWalkingEnv:
     def __init__(self, ncol=12, nrow=4):
         self.ncol = ncol
@@ -11,7 +8,7 @@ class CliffWalkingEnv:
         p = [[[] for j in range(4)] for i in range(self.nrow * self.ncol)]
         change = [[0, -1], [0, 1], [-1, 0], [1, 0]]
         for i in range(self.nrow):
-            for j in range(self.nrow):
+            for j in range(self.ncol):
                 for a in range(4):
                     if i == self.nrow - 1 and j > 0:
                         p[i * self.ncol + j][a] = [
